@@ -1,0 +1,33 @@
+package sort;
+
+import java.util.Arrays;
+
+public class Shellsort {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+          int[] arr = {1,4,5,6,3,2,9,8,10,7};
+          shellSort(arr);
+		// Ï£¶ûÅÅĞòµÄµÚÒ»ÂÖÅÅĞò
+
+	}
+
+	public static void shellSort(int[] arr) {
+
+		int temp = 0;
+		for (int gap = arr.length / 2; gap > 0; gap /= 2) {
+
+			for (int i = gap; i < arr.length; i++) {
+				for (int j = i - gap; j >= 0; j -= gap) {
+					if (arr[j] > arr[j + gap]) {
+						temp = arr[j];
+						arr[j] = arr[j + gap];
+						arr[j + gap] = temp;
+					}
+				}
+			}
+			System.out.println("Ï£¶ûÅÅĞòµÚxÂÖ="+ Arrays.toString(arr));
+		}
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;linkedList&apos; from expression &apos;new LinkedList()&apos;&#x0D;&#x0A;- Original project: &apos;suanfai&apos;&#x0D;&#x0A;- Variable name: &apos;linkedList&apos;&#x0D;&#x0A;- Destination method: &apos;graph.Graph.bfs()&apos;&#x0D;&#x0A;- Variable expression: &apos;new LinkedList()&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;linkedList&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;graph{Graph.java" name="linkedList" replace="true" selection="1901 17" stamp="1598153158903" varType="false" version="1.0"/>
+</session>

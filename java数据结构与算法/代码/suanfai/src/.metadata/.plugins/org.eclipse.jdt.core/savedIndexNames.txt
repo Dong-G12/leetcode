@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+E:\JAVA\JAVA数据结构与算法\代码\Algorithm\.metadata\.plugins\org.eclipse.jdt.core
+2596111713.index

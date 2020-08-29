@@ -1,0 +1,104 @@
+package horse;
+
+import java.awt.Point;
+import java.util.ArrayList;
+
+public class HorseChessboard {
+	private static int X; //棋盘的列数
+	
+    private static int Y; //棋盘的行数
+    
+    //创建一个数组，标记棋盘的各个位置是否被访问过
+    private static boolean visited[];
+    
+    //使用一个属性，标记是否棋盘的所有位置都被访问
+    private static boolean finished;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub 
+		
+	}
+	
+	/**
+	 * 完成骑士周游问题的算法
+	 * @param chessboard 棋盘
+	 * @param row 马儿当前的行 从0 开始
+	 * @param column 马儿当前的列 从0 开始
+	 * @param step 是第几步，初始位置是第一步
+	 */
+	public static void traversalChessboard(int[][] chessboard,int row,int column,int step) {
+		chessboard[row][column] = step;
+		visited[row*X + column] = true; //标记该位置已经访问
+		
+		//获取当前位置可以走的下一个位置的集合
+		
+		ArrayList<Point> ps = next(new Point(column,row));
+		
+		while(!ps.isEmpty()) {
+			Point p = ps.remove(0);//取出下一个可以走的位置
+			
+			//判断该点是否已经访问过
+			
+			if(!visited[p.y * X + p.x]) {
+				traversalChessboard(chessboard,p.y,p.x,step+1);	
+			}	
+		}
+		
+		//step<X*Y 有两种情况，1，棋盘到目前位置，仍然没有走完。2，棋盘已经走完了，但是在回溯过程中
+		if(step < X*Y && !finished) {
+			chessboard[row][column] = 0;
+			visited[row*X + column] = false;
+		}else {
+			finished = true;
+		}
+	}
+	
+	/**
+	 * 根据当前位置(Point对象)，计算马儿还能走哪些位置，并放入到一个集合中（ArrayList），最多有8个位置
+	 * @param curPoint
+	 * @return
+	 */
+	public static ArrayList<Point> next(Point curPoint){
+		//创建一个ArrayList
+        ArrayList<Point> ps = new ArrayList<Point>();
+        
+        Point p1 = new Point();
+        //
+        if((p1.x = curPoint.x - 2) >= 0 && (p1.y = curPoint.y-1) >= 0) {
+//        	ps.add(p1);
+        	ps.add(new Point(p1));
+        }
+        if((p1.x = curPoint.x - 1) >= 0 && (p1.y = curPoint.y-2) >= 0) {
+//        	ps.add(p1);
+        	ps.add(new Point(p1));
+        }
+        if((p1.x = curPoint.x + 1) < X && (p1.y = curPoint.y-2) >= 0) {
+//        	ps.add(p1);
+        	ps.add(new Point(p1));
+        }
+        if((p1.x = curPoint.x + 2) < X && (p1.y = curPoint.y-1) >= 0) {
+//        	ps.add(p1);
+        	ps.add(new Point(p1));
+        }
+        
+        if((p1.x = curPoint.x + 2) < X && (p1.y = curPoint.y + 1) < Y) {
+//        	ps.add(p1);
+        	ps.add(new Point(p1));
+        }
+        if((p1.x = curPoint.x + 1) < X && (p1.y = curPoint.y + 2) < Y) {
+//        	ps.add(p1);
+        	ps.add(new Point(p1));
+        }
+        
+        if((p1.x = curPoint.x - 1) >= 0 && (p1.y = curPoint.y + 2) < Y) {
+//        	ps.add(p1);
+        	ps.add(new Point(p1));
+        }
+        if((p1.x = curPoint.x - 2) >= 0 && (p1.y = curPoint.y + 1) < Y) {
+//        	ps.add(p1);
+        	ps.add(new Point(p1));
+        }
+        
+        return ps;
+	}
+
+}

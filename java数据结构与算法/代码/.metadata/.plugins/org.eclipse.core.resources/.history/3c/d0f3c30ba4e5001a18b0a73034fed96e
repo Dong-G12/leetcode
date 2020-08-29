@@ -1,0 +1,21 @@
+package KMP;
+
+public class ViolenceMatch {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = "I am a String";  
+		char arr[] = str.toCharArray();  
+		for (int i = 0; i < arr.length; i++)  { 
+			System.out.println("arr[" + i + "]=" + arr[i]); 
+			}
+	}
+	
+	//±©Á¦Æ¥ÅäËã·¨
+	
+//	public static int violencematch(String str1,String str2) {
+//		char[] s1 = str1.toCharArray();
+//		char[] s2 = str2.toCharArray();
+//	}
+
+}

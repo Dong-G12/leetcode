@@ -1,0 +1,63 @@
+package kruskal;
+
+public class KruskalCase {
+    
+	
+	private int edgeNum;
+	
+	private char[] vertexs;
+	
+	private int[][] matrix;
+	
+	private static final int INF = Integer.MAX_VALUE;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+         
+		
+	}
+	
+	//构造器
+	
+	public KruskalCase(char[] vertexs,int[][] matrix) {
+		int vlen = vertexs.length;
+		
+		//初始化顶点
+		
+		this.vertexs = new char[vlen];
+		for(int i =0;i<vertexs.length;i++) {
+			this.vertexs[i] = vertexs[i];
+		}
+		
+		//初始化边
+		this.matrix = new int[vlen][vlen];
+		
+		//使用的是复制拷贝的方式
+		
+		for(int i =0;i<vlen;i++) {
+			for(int j =0;j<vlen;j++) {
+				this.matrix[i][j] = matrix[i][j];
+			}
+		}
+		
+		//统计边
+		
+		for(int i = 0;i <vlen;i++) {
+			for(int j =0;j<vlen;j++) {
+				if(this.matrix[i][j] != INF) {
+					edgeNum ++;
+				}
+			}
+		}
+		
+	}
+	
+	public void print() {
+		System.out.println("邻接矩阵为");
+		for(int i =0;i<vertexs.length;i++) {
+			for(int j =0;j<vertexs.length;j++) {
+				System.out.printf("%d\t",matrix[i][j]);
+			}
+		}
+	}
+
+}

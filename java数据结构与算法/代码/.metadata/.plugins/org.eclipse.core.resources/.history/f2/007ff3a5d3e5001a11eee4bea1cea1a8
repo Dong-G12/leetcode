@@ -1,0 +1,34 @@
+package KMP;
+
+public class KMPalgorithm {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+         String str1 = "BBC ABCDAB ABCDABCDABDE";
+         
+         String str2 = "ABCDABD";
+         
+         int[] next = kmpNext("AA");
+         System.out.println(next);
+         
+	}
+	
+	//得到一个字符串的部分匹配表
+	public static  int[] kmpNext(String dest) {
+		//创建一个next数组，保存部分匹配值
+		int[] next = new int[dest.length()];
+		
+		next[0] = 0; //如果字符串是长度为1，部分 匹配值就是0
+		
+		for(int i = 1,j=0;i<dest.length();i++) {
+			if(dest.charAt(i) == dest.charAt(j)) { //当这个条件满足时，部分匹配值就是要加一
+				j++;
+			}
+			next[i] = j;
+		}
+		
+		return next;
+		
+	}
+
+}

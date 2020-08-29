@@ -1,0 +1,12 @@
+1597582747030	Extract local variable 'arraysList'
+1597674739058	Extract local variable 'arrayBinary'
+1597708914835	Delete element
+1597708933556	Move compilation unit
+1597710939912	Extract local variable 'heroNode'
+1597711174206	Extract local variable 'threadedBinaryTree'
+1597798229858	Extract local variable 'arrayList'
+1597832638058	Extract local variable 'stringBuilder2'
+1597886796064	Delete element
+1597887254318	Delete element
+1597887896892	Delete element
+1597969526051	Extract local variable 'node'
